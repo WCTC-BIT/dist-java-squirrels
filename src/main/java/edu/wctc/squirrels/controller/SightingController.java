@@ -52,6 +52,7 @@ public class SightingController {
     @RequestMapping("/sightings")
     public String showRecentSightings(Model model,
                                       @RequestParam("id") int squirrelId) {
+        model.addAttribute("pageTitle", "Recent Sightings");
         model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
         model.addAttribute("sightingList", sightingService.getSightingsForSquirrel(squirrelId));
         return "sightings";

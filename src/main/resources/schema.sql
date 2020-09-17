@@ -24,5 +24,5 @@ create table Sighting (
 alter table Sighting
     add foreign key (squirrel_id) references Squirrel(squirrel_id);
 
-alter table Location
+alter table Sighting
     add foreign key (location_id) references Location(location_id);

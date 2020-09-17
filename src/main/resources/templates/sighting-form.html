@@ -5,7 +5,7 @@
 <header th:replace="frags :: logo"></header>
 
 <div class="form">
-    <img th:src="@{/img/{file}(file=${squirrel.imageFileName})}" alt="${squirrel.commonName}">
+    <img th:src="@{/img/{file}(file=${squirrel.imageFileName})}" th:alt="${squirrel.commonName}">
     <br/>
     <h3 th:text="|Tell us about your ${squirrel.commonName} sighting|">REPORT A SIGHTING</h3>
     <br/>
