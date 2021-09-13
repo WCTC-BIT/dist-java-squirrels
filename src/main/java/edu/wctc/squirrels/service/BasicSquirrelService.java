@@ -11,8 +11,12 @@ import java.util.Optional;
 
 @Service
 public class BasicSquirrelService implements SquirrelService {
-    @Autowired
     private SquirrelRepository squirrelRepository;
+
+    @Autowired
+    public BasicSquirrelService(SquirrelRepository sr) {
+        this.squirrelRepository = sr;
+    }
 
     @Override
     public Squirrel getSquirrel(int squirrelId) {

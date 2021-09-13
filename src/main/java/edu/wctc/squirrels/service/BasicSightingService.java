@@ -11,9 +11,12 @@ import java.util.List;
 
 @Service
 public class BasicSightingService implements SightingService {
-    @Autowired
     private SightingRepository sightingRepository;
 
+    @Autowired
+    public BasicSightingService(SightingRepository sr) {
+        this.sightingRepository = sr;
+    }
 
     @Override
     public void saveSighting(Sighting sighting) {
@@ -22,8 +25,6 @@ public class BasicSightingService implements SightingService {
 
     @Override
     public List<Sighting> getSightingsForSquirrel(int squirrelId) {
-        List<Sighting> list = new ArrayList<>();
-        sightingRepository.findAllBySquirrelIdOrderBySpottedAt(squirrelId).forEach(list::add);
-        return list;
+        return sightingRepository.findAllBySquirrelIdOrderBySpottedAt(squirrelId);
     }
 }

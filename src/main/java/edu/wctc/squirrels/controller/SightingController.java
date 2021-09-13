@@ -17,12 +17,16 @@ import javax.validation.Valid;
 
 @Controller
 public class SightingController {
-    @Autowired
-    private SightingService sightingService;
-    @Autowired
     private SquirrelService squirrelService;
-    @Autowired
+    private SightingService sightingService;
     private LocationService locationService;
+
+    @Autowired
+    public SightingController(SquirrelService sqs, SightingService sis, LocationService los) {
+        this.squirrelService = sqs;
+        this.sightingService = sis;
+        this.locationService = los;
+    }
 
     @PostMapping("/save")
     public String processSighting(Model model,
