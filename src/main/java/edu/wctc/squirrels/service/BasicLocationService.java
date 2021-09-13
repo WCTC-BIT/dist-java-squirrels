@@ -10,13 +10,15 @@ import java.util.List;
 
 @Service
 public class BasicLocationService implements LocationService {
-    @Autowired
     private LocationRepository locationRepository;
+
+    @Autowired
+    public BasicLocationService(LocationRepository lr) {
+        this.locationRepository = lr;
+    }
 
     @Override
     public List<Location> getLocationList() {
-        List<Location> list = new ArrayList<>();
-        locationRepository.findAllByOrderByCountryAscName().forEach(list::add);
-        return list;
+        return locationRepository.findAllByOrderByCountryAscName();
     }
 }
