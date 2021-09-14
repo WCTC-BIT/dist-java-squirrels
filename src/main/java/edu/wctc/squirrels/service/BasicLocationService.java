@@ -19,6 +19,8 @@ public class BasicLocationService implements LocationService {
 
     @Override
     public List<Location> getLocationList() {
-        return locationRepository.findAllByOrderByCountryAscName();
+        List<Location> list = new ArrayList<>();
+        locationRepository.findAllByOrderByCountryAscName().forEach(list::add);
+        return list;
     }
 }

@@ -11,7 +11,7 @@
     <br/>
 
     <form th:action="@{/save}" method="post" th:object="${sighting}">
-        <input type="hidden" th:field="*{squirrelId}" th:value="${squirrel.id}">
+        <input type="hidden" th:field="*{squirrelId}">
 
         <label for="spotter">Name of Squirrel Spotter</label>
         <span class="error" th:if="${#fields.hasErrors('spotterName')}" th:errors="*{spotterName}">NAME ERROR</span>
