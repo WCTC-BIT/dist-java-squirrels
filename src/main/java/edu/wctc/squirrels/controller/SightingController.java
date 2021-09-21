@@ -28,6 +28,11 @@ public class SightingController {
         this.locationService = los;
     }
 
+    @ModelAttribute
+    public void locationList(Model model) {
+        model.addAttribute("locationList", locationService.getLocationList());
+    }
+
     @PostMapping("/save")
     public String processSighting(Model model,
                                   @Valid @ModelAttribute Sighting sighting,
@@ -37,7 +42,7 @@ public class SightingController {
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult);
             model.addAttribute("pageTitle", "Report Sighting");
-            model.addAttribute("locationList", locationService.getLocationList());
+//            model.addAttribute("locationList", locationService.getLocationList());
             model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
             return "sighting-form";
         }
@@ -66,7 +71,7 @@ public class SightingController {
     public String showSightingForm(Model model,
                                    @RequestParam("id") int squirrelId) {
         model.addAttribute("pageTitle", "Report Sighting");
-        model.addAttribute("locationList", locationService.getLocationList());
+//        model.addAttribute("locationList", locationService.getLocationList());
         model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
 
         Sighting si = new Sighting();
