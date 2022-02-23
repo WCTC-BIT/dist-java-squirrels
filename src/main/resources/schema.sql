@@ -14,15 +14,15 @@ create table Location (
 
 create table Sighting (
     sighting_id identity,
-    squirrel_id int not null,
+    sq_id int not null,
     spotter_name varchar(200) not null,
-    location_id int not null,
+    loc_id int not null,
     count int not null default 0,
     spotted_at timestamp not null
 );
 
 alter table Sighting
-    add foreign key (squirrel_id) references Squirrel(squirrel_id);
+    add foreign key (sq_id) references Squirrel(squirrel_id);
 
 alter table Sighting
-    add foreign key (location_id) references Location(location_id);
+    add foreign key (loc_id) references Location(location_id);

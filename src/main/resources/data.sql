@@ -43,23 +43,23 @@ values (8, 'Jintang-Kongyu Nature Reserve', 'China');
 insert into location(location_id, name, country)
 values (9, 'Fengtongzhai Nature Reserve', 'China');
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(5, 6, 'Squirrel Boss 2020', 3, PARSEDATETIME('13 Sep 2020, 05:15', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(1, 4, 'Squirrel Boss 2020', 2, PARSEDATETIME('27 Aug 2020, 12:31', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(6, 1, 'Squirrel Boss 2020', 1, PARSEDATETIME('03 Sep 2020, 15:07', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(2, 8, 'Squirrel Boss 2020', 3, PARSEDATETIME('04 Aug 2020, 13:56', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(3, 7, 'Rocky', 1, PARSEDATETIME('29 Aug 2020, 11:14', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(2, 9, 'Sandy', 1, PARSEDATETIME('16 Aug 2020, 08:43', 'dd MMM yyyy, HH:mm'));
 
-insert into sighting(squirrel_id, location_id, spotter_name, count, spotted_at)
+insert into sighting(sq_id, loc_id, spotter_name, count, spotted_at)
 values(4, 2, 'Sandy', 1, PARSEDATETIME('28 Jul 2020, 07:37', 'dd MMM yyyy, HH:mm'));

@@ -17,7 +17,7 @@ public class Sighting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "squirrel_id")
+    @Column(name = "sq_id")
     private int squirrelId;
 
     @NotBlank
@@ -27,7 +27,7 @@ public class Sighting {
     //@Column(name = "location_id")
     //private int locationId;
     @ManyToOne
-    @JoinColumn(name="location_id")
+    @JoinColumn(name="loc_id")
     private Location location;
 
     @Min(1)
