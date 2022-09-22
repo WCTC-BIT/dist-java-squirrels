@@ -24,7 +24,7 @@ public class Sighting {
     @Column(name = "spotter_name")
     private String spotterName;
 
-    //@Column(name = "location_id")
+    //@Column(name = "loc_id")
     //private int locationId;
     @ManyToOne
     @JoinColumn(name="loc_id")
