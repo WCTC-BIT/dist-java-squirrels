@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head th:replace="frags :: head"></head>
+<head th:replace="~{frags :: head('Report a Sighting')}"></head>
 <body>
-<header th:replace="frags :: logo"></header>
+<header th:replace="~{frags :: logo}"></header>
 
 <div class="form">
     <img th:src="@{/img/__${squirrel.imageFileName}__}" th:alt="${squirrel.commonName}">
