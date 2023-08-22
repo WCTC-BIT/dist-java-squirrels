@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping("/")
-    public String showHomePage(Model model) {
-        model.addAttribute("pageTitle", "24/7 SquirrelWatch");
+    public String showHomePage() {
         return "index";
     }
 
     @RequestMapping("/credits")
-    public String showCreditsPage(Model model) {
-        model.addAttribute("pageTitle", "Credits");
+    public String showCreditsPage() {
         return "credits";
     }
 }

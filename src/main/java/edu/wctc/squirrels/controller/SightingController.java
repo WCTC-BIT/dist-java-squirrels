@@ -41,7 +41,6 @@ public class SightingController {
 
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult);
-            model.addAttribute("pageTitle", "Report Sighting");
 //            model.addAttribute("locationList", locationService.getLocationList());
             model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
             return "sighting-form";
@@ -49,7 +48,6 @@ public class SightingController {
 
         sightingService.saveSighting(sighting);
 
-        model.addAttribute("pageTitle", "Thank You!");
         model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
         model.addAttribute("sightingList", sightingService.getSightingsForSquirrel(squirrelId));
 
@@ -61,7 +59,6 @@ public class SightingController {
     @RequestMapping("/sightings")
     public String showRecentSightings(Model model,
                                       @RequestParam("id") int squirrelId) {
-        model.addAttribute("pageTitle", "Recent Sightings");
         model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
         model.addAttribute("sightingList", sightingService.getSightingsForSquirrel(squirrelId));
         return "sightings";
@@ -70,7 +67,6 @@ public class SightingController {
     @RequestMapping("/report")
     public String showSightingForm(Model model,
                                    @RequestParam("id") int squirrelId) {
-        model.addAttribute("pageTitle", "Report Sighting");
 //        model.addAttribute("locationList", locationService.getLocationList());
         model.addAttribute("squirrel", squirrelService.getSquirrel(squirrelId));
 
@@ -83,7 +79,6 @@ public class SightingController {
 
     @RequestMapping("/list")
     public String showSquirrelList(Model model) {
-        model.addAttribute("pageTitle", "Pick a Squirrel");
         model.addAttribute("squirrelList", squirrelService.getSquirrelList());
 
         return "squirrel-list";
