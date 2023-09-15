@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
-<head th:replace="~{frags :: head('Squirrels We Watch')}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/frags :: head('Squirrels We Watch')}"></head>
 <body>
-<header th:replace="~{frags :: logo}"></header>
+<header th:replace="~{fragments/frags :: logo}"></header>
 
 <div class="content">
 <div th:each="sq : ${squirrelList}" class="squirrel-entry">
