@@ -17,15 +17,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SightingController {
-    private SquirrelService squirrelService;
-    private SightingService sightingService;
-    private LocationService locationService;
+    private final SquirrelService squirrelService;
+    private final SightingService sightingService;
+    private final LocationService locationService;
 
     @Autowired
-    public SightingController(SquirrelService sqs, SightingService sis, LocationService los) {
-        this.squirrelService = sqs;
-        this.sightingService = sis;
-        this.locationService = los;
+    public SightingController(SquirrelService squirrelService,
+                              SightingService sightingService,
+                              LocationService locationService) {
+        this.squirrelService = squirrelService;
+        this.sightingService = sightingService;
+        this.locationService = locationService;
     }
 
     @ModelAttribute
@@ -53,8 +55,6 @@ public class SightingController {
 
         return "confirmation";
     }
-
-
 
     @RequestMapping("/sightings")
     public String showRecentSightings(Model model,
