@@ -11,21 +11,18 @@ import java.util.Optional;
 
 @Service
 public class BasicSquirrelService implements SquirrelService {
-    private SquirrelRepository squirrelRepository;
+    private final SquirrelRepository squirrelRepository;
 
     @Autowired
-    public BasicSquirrelService(SquirrelRepository sr) {
-        this.squirrelRepository = sr;
+    public BasicSquirrelService(SquirrelRepository squirrelRepository) {
+        this.squirrelRepository = squirrelRepository;
     }
 
     @Override
     public Squirrel getSquirrel(int squirrelId) {
         Optional<Squirrel> s = squirrelRepository.findById(squirrelId);
-        if (s.isPresent()) {
-            return s.get();
-        }
+        return s.orElse(null);
 
-        return null;
     }
 
     @Override
