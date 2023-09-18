@@ -10,11 +10,11 @@ import java.util.List;
 
 @Service
 public class BasicLocationService implements LocationService {
-    private LocationRepository locationRepository;
+    private final LocationRepository locationRepository;
 
     @Autowired
-    public BasicLocationService(LocationRepository lr) {
-        this.locationRepository = lr;
+    public BasicLocationService(LocationRepository locationRepository) {
+        this.locationRepository = locationRepository;
     }
 
     @Override

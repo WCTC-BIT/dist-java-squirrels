@@ -11,11 +11,11 @@ import java.util.List;
 
 @Service
 public class BasicSightingService implements SightingService {
-    private SightingRepository sightingRepository;
+    private final SightingRepository sightingRepository;
 
     @Autowired
-    public BasicSightingService(SightingRepository sr) {
-        this.sightingRepository = sr;
+    public BasicSightingService(SightingRepository sightingRepository) {
+        this.sightingRepository = sightingRepository;
     }
 
     @Override
